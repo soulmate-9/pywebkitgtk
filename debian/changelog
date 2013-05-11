@@ -1,0 +1,130 @@
+pywebkitgtk (1.1.8-3) unstable; urgency=low
+
+  * debian/rules:
+    + Remove hack to install a pkg-config file. It's no longer needed and
+      is causing the package to FTBFS. Closes: #707521.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 12 May 2013 00:20:18 +0200
+
+pywebkitgtk (1.1.8-2) unstable; urgency=low
+
+  [ Martin Pitt ]
+  * debian/control.in: Fix update libwebkit-dev build dependency to
+    libwebkitgtk-dev.
+  * Drop 02_fix_m4_directory.dpatch, 03_autoreconf.dpatch, and 00list. These
+    patches don't get applied anyway (this is a 3.0 quilt source). Thanks to
+    Chris Coulson for pointing this out!
+
+  [ Chris Coulson ]
+  * Add web_view_get_title.patch: Add binding for WebView.get_title().
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 08 Jun 2011 14:06:19 +0200
+
+pywebkitgtk (1.1.8-1) unstable; urgency=low
+
+  [ Christophe Sauthier ]
+  * New upstream release
+  * debian/control.in
+  - Standards-Version is 3.9.1, no changes needed.
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/control.in,
+    debian/rules:
+    - Switch to CDBS and python-autotools.mk.
+  * debian/control.in:
+    - Standards-Version is 3.8.4, no changes needed.
+    - Let python-webkit-dev depend on ${misc:Depends}.
+    - Remove trailing whitespaces.
+  * debian/python-webkit.docs:
+    - Removed, not needed with CDBS.
+  * debian/control.in,
+    debian/rules,
+    debian/source/format:
+    - Switch to source format 3.0 (quilt).
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 10 Sep 2010 22:34:11 +0200
+
+pywebkitgtk (1.1.7-1) unstable; urgency=low
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/watch: Fixed.
+
+  [ Christophe Sauthier ]
+  * New upstream version
+  * debian/control.in
+    - Add libglib2.0-dev as a build dependency to reflect confgure check.
+  * debian/patches/01_fix_codegen_error.dpatch removed since it has been
+    integrated upstream.
+  * debian/patches/03_autoreconf.dpatch updated.
+  * debian/python-webkit.examples change tabbed_browser.py by browser.py
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/control.in:
+    - Use spaces consistently.
+    - Build depend on libwebkit-dev >= 1.1.10 for the new version.
+    - Standards-Version is 3.8.3, no changes needed.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 14 Nov 2009 11:20:42 +0100
+
+pywebkitgtk (1.1.5-1) unstable; urgency=low
+
+  [ Christophe Sauthier ]
+  * New upstream version.
+  * debian/python-webkit.examples : Addition of demos/inspector.py.
+  * debian/python-webkit.install:
+    - Change debian/tmp/usr/lib/python*/site-packages/* to
+      debian/tmp/usr/lib/python*/*-packages/* for python2.6 transition. 
+  * Fix the codegen error path related to multiple python build :
+    - debian/patches/01_codegen_error.dpatch: added to fix the error.
+    - debian/patches/03_autoreconf.dpatch added.
+  * Fix the wrong m4 directory lookup:
+    - debian/patches/02_fix_m4_directory : inclusion of the m4 directory to
+      ACLOCAL_AMFLAGS.
+  * debian/copyright :
+    - update it according upstream changes.
+    - update the debian packager email.
+  * Update maintainer email.
+
+  [ Josselin Mouette ]
+  * Remove dh_scrollkeeper calls.
+  * 03_autoreconf.dpatch: remove some useless parts.
+  * Install the definitions from /usr/share/pywebkitgtk.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 08 Jul 2009 22:35:09 +0200
+
+pywebkitgtk (1.0.2-1) unstable; urgency=low
+
+  [ Christophe Sauthier ]
+  * New upstream version.
+
+  [ Josselin Mouette ]
+  * Update maintainer email.
+
+ -- Christophe Sauthier <christophe.sauthier@gmail.com>  Wed, 28 Jan 2009 11:37:28 +0100
+
+pywebkitgtk (1.0.1-1) unstable; urgency=low
+
+  [ Christophe Sauthier ]
+  * First debian version. Closes: #445451.
+
+  [ Josselin Mouette ]
+  * Make the GNOME team uploaders, build-depend on gnome-pkg-tools.
+  * Support the get-orig-source target.
+  * Remove useless python-webkitgtk-dev.dirs.
+  * python-webkitgtk-dev depends on python-gtk2-dev.
+  * Remove unused install-indep target.
+  * Remove the pkg-config python hack, it’s not needed.
+  * Rename packages to python-webkit{,-dev} according to the module 
+    name.
+  * Make python-webkit-dev architecture-independent.
+  * Pass ChangeLog instead of NEWS to dh_installchangelogs.
+  * Make dh_compress ignore .py files.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 17 Oct 2008 15:56:55 +0200
+
+pywebkitgtk (1.0.1-0ubuntu1) intrepid; urgency=low
+
+  * Initial release (LP: #261279)
+
+ -- Christophe Sauthier <christophe.sauthier@makina-corpus.com>  Mon, 25 Aug 2008 23:31:56 +0200
+
