@@ -12,7 +12,7 @@ Build-Depends:  debhelper (>= 5),
                 cdbs (>= 0.4.73),
                 gnome-pkg-tools,
                 autotools-dev,
-                python-support (>= 0.5.3),
+                dh-python,
                 python-all-dev (>= 2.5.2),
                 libwebkitgtk-dev,
                 python-gtk2-dev,
@@ -20,6 +20,7 @@ Build-Depends:  debhelper (>= 5),
                 libglib2.0-dev
 Standards-Version: 3.9.1
 Homepage: http://code.google.com/p/pywebkitgtk/
+X-Python-Version: >= 2.4
 
 Package: python-webkit-dev
 Architecture: all
