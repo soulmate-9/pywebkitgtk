@@ -1,3 +1,10 @@
+pywebkitgtk (1.1.8-3+soulmate2) stretch; urgency=medium
+
+  * Updated control.in file
+  * Avoid installation of unwanted files "webkit.a" and "webkit.la"
+
+ -- Luis Antonio Garcia Gisbert <luisgg@gmail.com>  Tue, 22 Aug 2017 10:25:11 +0000
+
 pywebkitgtk (1.1.8-3+soulmate1) stretch; urgency=medium
 
   * Non-maintainer upload.

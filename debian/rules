@@ -11,3 +11,8 @@ include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
 
 GNOME_DOWNLOAD_URL = http://pywebkitgtk.googlecode.com/files/$(GNOME_TARBALL)
 DEB_COMPRESS_EXCLUDE += .py
+
+binary-post-install/python-webkit::
+	rm -fv ${CURDIR}/debian/python-webkit/usr/lib/python2.7/dist-packages/webkit/webkit.a
+	rm -fv ${CURDIR}/debian/python-webkit/usr/lib/python2.7/dist-packages/webkit/webkit.la
+
